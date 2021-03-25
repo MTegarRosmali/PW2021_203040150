@@ -24,14 +24,14 @@ $mahasiswa = [
         "nrp" => "203040150",
         "email" => "02tegarrosmali@gmail.com",
         "jurusan" => "Teknik Informatika",
-        "gambar" => "tegar.jpg"
+        "gambar" => "1.png"
     ],
     [
         "nama" => "Ucup", 
         "nrp" => "203040199",
         "email" => "ucupuwow@gmail.com",
         "jurusan" => "Teknik informatika",
-        "gambar" => "tegar.jpg"
+        "gambar" => "1.png"
     ]
 ];
 ?>
@@ -50,7 +50,7 @@ $mahasiswa = [
 <?php foreach ( $mahasiswa as $mhs ) : ?>
 <ul>
     <li>
-        <img src="img/<?= $mhs["gambar"]; ?>">
+        <img src="../img/<?= $mhs["gambar"]; ?>">
     </li>
     <li>Nama : <?= $mhs["nama"]; ?></li>
     <li>NRP : <?= $mhs["nrp"]; ?></li>  
