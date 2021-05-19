@@ -21,7 +21,7 @@ $handphone = query("SELECT * FROM handphone");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Latihan4b</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 </head>
 <body>
 <div class="float-md-start">
@@ -39,15 +39,15 @@ $handphone = query("SELECT * FROM handphone");
   </thead>
   <tbody>
     <?php $i = 1 ?>
-    <?php foreach ( $handphone as $hp ) : ?>
+    <?php foreach ( $hp as $row ) : ?>
             <tr>
               <th scope=><?= $i ?></th>
-              <td><img src="../assets/img/<?= $hp["Gambar"]; ?>"></td>
-              <td><?= $hp["Nama"] ?></td>
-              <td><?= $hp["Status"] ?></td>
-              <td><?= $hp["RAM"] ?></td>
-              <td><?= $hp["ROM"] ?></td>
-              <td><?= $hp["Harga"] ?></td>
+              <td><img src="../assets/img/<?= $row["Gambar"]; ?>"></td>
+              <td><?= $row["Nama"] ?></td>
+              <td><?= $row["Status"] ?></td>
+              <td><?= $row["RAM"] ?></td>
+              <td><?= $row["ROM"] ?></td>
+              <td><?= $row["Harga"] ?></td>
             </tr>
             <?php $i++ ?>
             <?php endforeach; ?>
