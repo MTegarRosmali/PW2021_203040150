@@ -5,7 +5,7 @@ require 'functions.php';
 $id = $_GET['id'];
 
 // query mahasiswa berdasarkan id
-$mhs = query("SELECT * FROM mahasiswa WHERE id = $id");
+$hp = query("SELECT * FROM handphone WHERE id = $id");
 ?>
 
 <!DOCTYPE html>
@@ -14,16 +14,18 @@ $mhs = query("SELECT * FROM mahasiswa WHERE id = $id");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Mahasiswa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Detail Handphone</title>
 </head>
 <body>
-    <h3>Detail Mahasiswa</h3>
+    <h3>Detail Handphone</h3>
     <ul>
-        <li><img src="gambar/<?= $mhs['gambar']; ?>"></li>
-        <li>Nama : <?= $mhs['nama']; ?></li>
-        <li>NRP : <?= $mhs['nrp']; ?></li>
-        <li>Email : <?= $mhs['email']; ?></li>
-        <li>Jurusan : <?= $mhs['jurusan']; ?></li>
+        <li><img src="img/<?= $hp['Gambar']; ?>"></li>
+        <li>Nama : <?= $hp['Nama']; ?></li>
+        <li>Status : <?= $hp['Status']; ?></li>
+        <li>RAM : <?= $hp['RAM']; ?></li>
+        <li>ROM : <?= $hp['ROM']; ?></li>
+        <li>Harga : <?= $hp['Harga']; ?></li>
         <li><a href="">Ubah</a> | <a href="">Hapus</a></li>
         <li><a href="latihan3.php">Kembali</a></li>
     </ul>
