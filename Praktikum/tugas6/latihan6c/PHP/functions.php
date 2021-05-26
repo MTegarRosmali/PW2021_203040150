@@ -34,7 +34,7 @@ function tambah($data)
 
     $query = "INSERT INTO handphone
                 VALUES
-              ('','','$gambar', '$Nama', '$Status', '$RAM', '$ROM','Harga')
+              ('','$Gambar', '$Nama', '$Status', '$RAM', '$ROM','$Harga')
             ";
     mysqli_query($conn, $query);
     echo mysqli_error($conn);
@@ -63,7 +63,7 @@ function ubah($data)
     $ROM = htmlspecialchars($data["ROM"]);
     $Harga = htmlspecialchars($data["Harga"]);
 
-    $query = "UPDATE data SET
+    $query = "UPDATE handphone SET
                 Gambar = '$Gambar',
                 Nama = '$Nama',
                 Status = '$Status',

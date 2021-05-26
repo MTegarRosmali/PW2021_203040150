@@ -9,8 +9,8 @@ Jum'at,13.00
 <?php
 session_start();
 
-if (!isset($_SESSION["username"])) {
-  header("Location: login.php");
+if (!isset($_GET['id'])) {
+  header("Location: index.php");
   exit;
 }
 
@@ -24,10 +24,10 @@ $hp = query("SELECT * FROM handphone WHERE id = $id")[0];
 
 
 // cek apakah tombol submit sudah ditekan atau belum
-if (isset($_POST["tambah"])) {
+if (isset($_POST["ubah"])) {
 
     // cek apakah data berhasil di tambahkan atau tidak
-    if (tambah($_POST) > 0) {
+    if (ubah($_POST) > 0) {
         echo "
 			<script>
 				alert('data berhasil ditambahkan!');
@@ -35,12 +35,7 @@ if (isset($_POST["tambah"])) {
 			</script>
 		";
     } else {
-        echo "
-			<script>
-				alert('data gagal ditambahkan!');
-				document.location.href = 'admin.php';
-			</script>
-		";
+        echo "data gagal ditambahkan!";
     }
 }
 ?>
