@@ -15,7 +15,7 @@ function query($query)
         return mysqli_fetch_assoc($result);
     }
 
-    $row = [];
+    $rows = [];
 while ($row = mysqli_fetch_assoc($result)) {
     $rows[] = $row;
     }

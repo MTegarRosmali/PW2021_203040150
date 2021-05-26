@@ -35,7 +35,7 @@ function tambah($data) {
     $query = "INSERT INTO 
               handphone
               VALUES
-              (null, '$Nama','$Status','$RAM','$ROM','$Harga');
+              ('', '$Nama','$Status','$RAM','$ROM','$Harga');
               ";
     mysqli_query($conn, $query);
     echo mysqli_error($conn);

@@ -1,6 +1,21 @@
 <?php 
+session_start();
+
+if(!isset($_SESSION['login'])) 
+{
+    header("Location: login.php");
+    exit;
+}
+
+
 require 'functions.php';
 $handphone = query("SELECT * FROM handphone");
+
+// ketika tombol cari di klik
+if (isset($_POST['cari']))
+{
+    $handphone = cari($_POST['keyword']);
+}
 
 ?>
 
@@ -23,6 +38,7 @@ $handphone = query("SELECT * FROM handphone");
                 <a href="tambah.php" style="text-decoration:none;color:#000;">Tambah Data Handphone</a>
             </div>
             <br><br>
+            
 
             <form action="" method="POST">
             <input type="text" name="keyword" size="40" placeholder="masukkan pencarian.." autocomplete="off" autofocus>
@@ -56,6 +72,7 @@ $handphone = query("SELECT * FROM handphone");
                     </tr>
                 <?php endforeach; ?>
             </table>
+            <a href="logout.php">Logout</a>
       </div>
     </div>
 </div>
