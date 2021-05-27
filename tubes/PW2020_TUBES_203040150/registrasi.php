@@ -14,7 +14,7 @@ if (isset($_POST['registrasi']))
         echo 'User gagal ditambahkan';
     }
 }
-
+ 
 ?>
 
 

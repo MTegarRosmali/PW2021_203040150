@@ -4,7 +4,7 @@ function koneksi()
 {
     return mysqli_connect('localhost', 'root', '', 'tubes_203040150');
 }
-
+ 
 function query($query)
 {
     $conn = koneksi();

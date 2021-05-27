@@ -20,7 +20,7 @@ if(isset($_POST['tambah'])) {
     }
 }
 ?>
-
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>

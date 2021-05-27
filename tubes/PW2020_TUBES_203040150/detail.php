@@ -7,7 +7,7 @@ if(!isset($_SESSION['login']))
     exit;
 }
 require 'functions.php';
-
+ 
 // ambil id dari URL
 $id = $_GET['id'];
 

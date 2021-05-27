@@ -7,7 +7,7 @@ if(!isset($_SESSION['login']))
     exit;
 }
 require 'functions.php';
-
+ 
 // jika tidak ada id di URL
 if (!isset($_GET['id'])){
     header("location: index.php");

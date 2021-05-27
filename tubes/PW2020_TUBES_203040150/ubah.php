@@ -19,7 +19,7 @@ $id = $_GET['id'];
 
 // cari handphone berdasarkan id
 $hp = query("SELECT *FROM handphone WHERE id= $id");
-
+ 
 // cek apakah tombol ubah sudah ditekan
 if(isset($_POST['ubah'])) {
     if( ubah($_POST) > 0 ) {

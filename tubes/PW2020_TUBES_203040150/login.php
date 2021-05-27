@@ -7,7 +7,7 @@ if(isset($_SESSION['login']))
     exit;
 }
 require 'functions.php';
-
+ 
 // ketika tombol login ditekan
 if (isset($_POST['login'])) 
 {
