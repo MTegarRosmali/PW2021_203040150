@@ -1,10 +1,16 @@
-<?php  
+<?php 
+/*
+M.Tegar Nurul Fuad Rosmali
+203040150
+Rabu, 26 Mei 2021
+Jum'at, 13.00
+*/ 
 
 function koneksi()
 {
     return mysqli_connect('localhost', 'root', '', 'tubes_203040150');
 }
-
+ 
 function query($query)
 {
     $conn = koneksi();
@@ -38,7 +44,7 @@ function upload()
         // echo "<script>
         //      alert('pilih gambar terlebih dahulu');
         //      </script>";
-        return 'a.png';
+        return 'nofoto.png';
     }
 
     // cek ekstensi file
@@ -121,7 +127,7 @@ function hapus ($id)
 
     // meghapus gambar di folder img
     $hp = query("SELECT * FROM handphone WHERE id = $id");
-    if ($hp['Gambar'] != 'a.png')
+    if ($hp['Gambar'] != 'nofoto.png')
     {
         unlink('img/' . $hp['Gambar']);
     }
@@ -148,7 +154,7 @@ function ubah($data)
         return false;
     }
 
-    if ($Gambar == 'a.png')
+    if ($Gambar == 'nofoto.png')
     {
         $Gambar = $gambar_lama;
     }
@@ -192,7 +198,7 @@ function login($data)
     $username = htmlspecialchars($data['username']);
     $password = htmlspecialchars($data['password']);
 
-    if ($user = query("SELECT * FROM user WHERE username = '$username' && password = '$password'")) 
+    if ($user = query("SELECT * FROM user WHERE username = '$username'"))
     {
         // cek password
         if (password_verify($password, $user['password'])){
@@ -267,7 +273,7 @@ function registrasi($data)
     $query = "INSERT INTO
                 user
                VALUES
-              ('','$username','$password_baru')
+              (null,'$username','$password_baru')
              ";
     mysqli_query($conn, $query) or die(mysqli_error($conn));
     return mysqli_affected_rows($conn);
